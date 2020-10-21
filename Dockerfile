@@ -10,4 +10,5 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 \
 FROM scratch
 WORKDIR /app
 COPY --from=build /code/target/openldap_exporter /app/openldap_exporter
+EXPOSE 9330
 ENTRYPOINT [ "/app/openldap_exporter" ]
